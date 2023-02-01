@@ -1,20 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-<<<<<<< HEAD
-  <title>Document</title>
-  <link rel="shortcut icon" href="imagens/LOGO2-_1_.ico" type="image/x-icon">
-=======
-  <title>PajusCuba | QR Code</title>
->>>>>>> 3c9d413e0b4fddd114279ec5eb76af1ffc348c17
-</head>
-<body>
-  <main>
-    <img src="imagens/Sem título-2.jpg" alt="" srcset="">
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="footer.css" />
+    <title>Javascript - Copy to Clipboard</title>
+    <link rel="shortcut icon" href="imagens/LOGO2-_1_.ico" type="image/x-icon">
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input,
+      button {
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        padding: 20px;
+      }
+
+      input {
+        display: flex;
+        background-color: #d4e8ff;
+        color: #06224a;
+        width: 250px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input#texto {
+        text-align: center;
+        font-weight: 800;
+        font-size: 20px;
+      }
+
+      button {
+        padding: 10px;
+        margin-top: 15px;
+        margin-left: 80px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #229ff1;
+        color: white;
+        text-transform: uppercase;
+        transition: 0.3s;
+        font-weight: 800;
+      }
+
+      button:hover {
+        background-color: #00ff0a;
+        color: black;
+        transition: 0.3s;
+        
+      }
+      img {
+        margin-left: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="imagens/10.jpg" alt="" srcset="">
+      <input
+        type="text"
+        name="texto"
+        id="texto"
+        readonly
+        placeholder=""
+        value="82988657666"
+      />
+    
+      <button onclick="copiarTexto()">Copiar</button>
+    </div>
+    <script>
+      function copiarTexto() {
+        let textoCopiado = document.getElementById("texto");
+        textoCopiado.select();
+        textoCopiado.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("PAJUSCUBA: Chave pix copiada com sucesso! " + textoCopiado.value);
+      }
+    </script>
+
+    <div class="footer" id="footer"></div>
+    <script src="footer.js"></script>
+  </body>
 </html>
